@@ -1,0 +1,33 @@
+BookMyShow Database Design and SQL Implementation
+
+
+Tables Overview
+
+ 1. Theatre
+
+  - Attributes:
+
+  * `theatre_id` (Primary Key)
+  * `name`
+  * `location`
+
+ 2. Movie
+
+  - Attributes:
+
+  * `movie_id` (Primary Key)
+  * `title`
+  * `language`
+  * `format` (e.g., 2D, 3D)
+
+ 3. Show
+
+  - Attributes:
+
+  * `show_id` (Primary Key)
+  * `movie_id` (Foreign Key)
+  * `theatre_id` (Foreign Key)
+  * `show_date`
+  * `show_time`
+  * `screen_type`
+
