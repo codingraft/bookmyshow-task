@@ -11,7 +11,7 @@ CREATE TABLE Movie (
     format VARCHAR(10) NOT NULL
 );
 
-CREATE TABLE Show (
+CREATE TABLE MovieShow (
     show_id INT PRIMARY KEY,
     movie_id INT,
     theatre_id INT,
@@ -36,12 +36,12 @@ INSERT INTO Movie VALUES
 (4, 'Avatar: The Way of Water', 'English', '3D');
 
 -- Shows on 2023-04-25
-INSERT INTO Show VALUES
+INSERT INTO MovieShow VALUES
 (1, 1, 1, '2023-04-25', '12:10:00', '4K Dolby 7.1'),
 (2, 2, 1, '2023-04-25', '13:00:00', '4K ATMOS screen'),
 (3, 2, 1, '2023-04-25', '16:10:00', '4K ATMOS screen'),
 (4, 2, 1, '2023-04-25', '18:20:00', '4K Dolby 7.1'),
-(5, 2, 1, '2023-04-25', '19:20:00', '4K ATMOS screen'),
+(5, 2, 1, '2023-04-25', '19:20:00', '4K ATMOS screen');
 
 
 
@@ -53,7 +53,7 @@ SELECT
     M.format,
     S.show_time,
     S.screen_type
-FROM Show S
+FROM MovieShow S
 JOIN Movie M ON S.movie_id = M.movie_id
 JOIN Theatre T ON S.theatre_id = T.theatre_id
 WHERE S.show_date = '2023-04-25'
